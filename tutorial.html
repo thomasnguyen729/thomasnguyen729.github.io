@@ -1,0 +1,1914 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>tutorial</title>
+<!-- 2018-11-18 Sun 16:11 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="ttn" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">tutorial</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. SUMMARY</a></li>
+<li><a href="#sec-2">2. BASIC CURSOR CONTROL</a></li>
+<li><a href="#sec-3">3. IF EMACS STOPS RESPONDING</a></li>
+<li><a href="#sec-4">4. DISABLED COMMANDS</a></li>
+<li><a href="#sec-5">5. WINDOWS</a></li>
+<li><a href="#sec-6">6. INSERTING AND DELETING</a></li>
+<li><a href="#sec-7">7. UNDO</a></li>
+<li><a href="#sec-8">8. FILES</a></li>
+<li><a href="#sec-9">9. BUFFERS</a></li>
+<li><a href="#sec-10">10. EXTENDING THE COMMAND SET</a></li>
+<li><a href="#sec-11">11. AUTO SAVE</a></li>
+<li><a href="#sec-12">12. ECHO AREA</a></li>
+<li><a href="#sec-13">13. MODE LINE</a></li>
+<li><a href="#sec-14">14. SEARCHING</a></li>
+<li><a href="#sec-15">15. MULTIPLE WINDOWS</a></li>
+<li><a href="#sec-16">16. MULTIPLE FRAMES</a></li>
+<li><a href="#sec-17">17. RECURSIVE EDITING LEVELS</a></li>
+<li><a href="#sec-18">18. GETTING MORE HELP</a></li>
+<li><a href="#sec-19">19. MORE FEATURES</a></li>
+<li><a href="#sec-20">20. CONCLUSION</a></li>
+<li><a href="#sec-21">21. COPYING</a></li>
+</ul>
+</div>
+</div>
+<p>
+Emacs tutorial.  See end for copying conditions.
+</p>
+
+<p>
+Emacs commands generally involve the CONTROL key (sometimes labeled
+CTRL or CTL) or the META key (sometimes labeled EDIT or ALT).  Rather than
+write that in full each time, we'll use the following abbreviations:
+</p>
+
+<p>
+C-&lt;chr&gt;  means hold the CONTROL key while typing the character &lt;chr&gt;
+         Thus, C-f would be: hold the CONTROL key and type f.
+M-&lt;chr&gt;  means hold the META or EDIT or ALT key down while typing &lt;chr&gt;.
+         If there is no META, EDIT or ALT key, instead press and release the
+         ESC key and then type &lt;chr&gt;.  We write &lt;ESC&gt; for the ESC key.
+</p>
+
+<p>
+Important note: to end the Emacs session, type C-x C-c.  (Two characters.)
+To quit a partially entered command, type C-g.
+The characters "&gt;&gt;" at the left margin indicate directions for you to
+try using a command.  For instance:
+</p>
+
+
+
+
+
+
+
+
+<p>
+[Middle of page left blank for didactic purposes.   Text continues below]
+</p>
+
+
+
+
+
+
+
+
+
+<p>
+&gt;&gt; Now type C-v (View next screen) to move to the next screen.
+        (go ahead, do it by holding down the CONTROL key while typing v).
+        From now on, you should do this again whenever you finish
+        reading the screen.
+</p>
+
+<p>
+Note that there is an overlap of two lines when you move from screen
+to screen; this provides some continuity so you can continue reading
+the text.
+</p>
+
+<p>
+The first thing that you need to know is how to move around from place
+to place in the text.  You already know how to move forward one screen,
+with C-v.  To move backwards one screen, type M-v (hold down the META key
+and type v, or type &lt;ESC&gt;v if you do not have a META, EDIT, or ALT key).
+</p>
+
+<p>
+&gt;&gt; Try typing M-v and then C-v, a few times.
+</p>
+
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> SUMMARY</h2>
+<div class="outline-text-2" id="text-1">
+<hr  />
+
+<p>
+The following commands are useful for viewing screenfuls:
+</p>
+
+<p>
+C-v        Move forward one screenful
+M-v        Move backward one screenful
+C-l        Clear screen and redisplay all the text,
+         moving the text around the cursor
+         to the center of the screen.
+         (That's CONTROL-L, not CONTROL-1.)
+</p>
+
+<p>
+&gt;&gt; Find the cursor, and note what text is near it.  Then type C-l.
+   Find the cursor again and notice that the same text is still near
+   the cursor, but now it is in the center of the screen.
+   If you press C-l again, this piece of text will move to the top of
+   the screen.  Press C-l again, and it moves to the bottom.
+</p>
+
+<p>
+You can also use the PageUp and PageDn keys to move by screenfuls, if
+your terminal has them, but you can edit more efficiently if you use
+C-v and M-v.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> BASIC CURSOR CONTROL</h2>
+<div class="outline-text-2" id="text-2">
+<hr  />
+
+<p>
+Moving from screenful to screenful is useful, but how do you
+move to a specific place within the text on the screen?
+</p>
+
+<p>
+There are several ways you can do this.  You can use the arrow keys,
+but it's more efficient to keep your hands in the standard position
+and use the commands C-p, C-b, C-f, and C-n.  These characters
+are equivalent to the four arrow keys, like this:
+</p>
+
+<p>
+Previous line, C-p
+</p>
+<pre class="example">
+</pre>
+<p>
+Backward, C-b &#x2026;. Current cursor position &#x2026;. Forward, C-f
+</p>
+<pre class="example">
+</pre>
+<p>
+Next line, C-n
+</p>
+
+<p>
+&gt;&gt; Move the cursor to the line in the middle of that diagram
+   using C-n or C-p.  Then type C-l to see the whole diagram
+   centered in the screen.
+</p>
+
+<p>
+You'll find it easy to remember these letters by words they stand for:
+P for previous, N for next, B for backward and F for forward.  You
+will be using these basic cursor positioning commands all the time.
+</p>
+
+<p>
+&gt;&gt; Do a few C-n's to bring the cursor down to this line.
+</p>
+
+<p>
+&gt;&gt; Move into the line with C-f's and then up with C-p's.
+   See what C-p does when the cursor is in the middle of the line.
+</p>
+
+<p>
+Each line of text ends with a Newline character, which serves to
+separate it from the following line.  (Normally, the last line in
+a file will have a Newline at the end, but Emacs does not require it.)
+</p>
+
+<p>
+&gt;&gt; Try to C-b at the beginning of a line.  It should move to
+   the end of the previous line.  This is because it moves back
+   across the Newline character.
+</p>
+
+<p>
+C-f can move across a Newline just like C-b.
+</p>
+
+<p>
+&gt;&gt; Do a few more C-b's, so you get a feel for where the cursor is.
+   Then do C-f's to return to the end of the line.
+   Then do one more C-f to move to the following line.
+</p>
+
+<p>
+When you move past the top or bottom of the screen, the text beyond
+the edge shifts onto the screen.  This is called "scrolling".  It
+enables Emacs to move the cursor to the specified place in the text
+without moving it off the screen.
+</p>
+
+<p>
+&gt;&gt; Try to move the cursor off the bottom of the screen with C-n, and
+   see what happens.
+</p>
+
+<p>
+If moving by characters is too slow, you can move by words.  M-f
+(META-f) moves forward a word and M-b moves back a word.
+</p>
+
+<p>
+&gt;&gt; Type a few M-f's and M-b's.
+</p>
+
+<p>
+When you are in the middle of a word, M-f moves to the end of the word.
+When you are in whitespace between words, M-f moves to the end of the
+following word.  M-b works likewise in the opposite direction.
+</p>
+
+<p>
+&gt;&gt; Type M-f and M-b a few times, interspersed with C-f's and C-b's
+   so that you can observe the action of M-f and M-b from various
+   places inside and between words.
+</p>
+
+<p>
+Notice the parallel between C-f and C-b on the one hand, and M-f and
+M-b on the other hand.  Very often Meta characters are used for
+operations related to the units defined by language (words, sentences,
+paragraphs), while Control characters operate on basic units that are
+independent of what you are editing (characters, lines, etc).
+</p>
+
+<p>
+This parallel applies between lines and sentences: C-a and C-e move to
+the beginning or end of a line, and M-a and M-e move to the beginning
+or end of a sentence.
+</p>
+
+<p>
+&gt;&gt; Try a couple of C-a's, and then a couple of C-e's.
+   Try a couple of M-a's, and then a couple of M-e's.
+</p>
+
+<p>
+See how repeated C-a's do nothing, but repeated M-a's keep moving one
+more sentence.  Although these are not quite analogous, each one seems
+natural.
+</p>
+
+<p>
+The location of the cursor in the text is also called "point".  To
+paraphrase, the cursor shows on the screen where point is located in
+the text.
+</p>
+
+<p>
+Here is a summary of simple cursor-moving operations, including the
+word and sentence moving commands:
+</p>
+
+<p>
+C-f        Move forward a character
+C-b        Move backward a character
+</p>
+
+<p>
+M-f        Move forward a word
+M-b        Move backward a word
+</p>
+
+<p>
+C-n        Move to next line
+C-p        Move to previous line
+</p>
+
+<p>
+C-a        Move to beginning of line
+C-e        Move to end of line
+</p>
+
+<p>
+M-a        Move back to beginning of sentence
+M-e        Move forward to end of sentence
+</p>
+
+<p>
+&gt;&gt; Try all of these commands now a few times for practice.
+   These are the most often used commands.
+</p>
+
+<p>
+Two other important cursor motion commands are M-&lt; (META Less-than),
+which moves to the beginning of the whole text, and M-&gt; (META
+Greater-than), which moves to the end of the whole text.
+</p>
+
+<p>
+On most terminals, the "&lt;" is above the comma, so you must use the
+shift key to type it.  On these terminals you must use the shift key
+to type M-&lt; also; without the shift key, you would be typing M-comma.
+</p>
+
+<p>
+&gt;&gt; Try M-&lt; now, to move to the beginning of the tutorial.
+   Then use C-v repeatedly to move back here.
+</p>
+
+<p>
+&gt;&gt; Try M-&gt; now, to move to the end of the tutorial.
+   Then use M-v repeatedly to move back here.
+</p>
+
+<p>
+You can also move the cursor with the arrow keys, if your terminal has
+arrow keys.  We recommend learning C-b, C-f, C-n and C-p for three
+reasons.  First, they work on all kinds of terminals.  Second, once
+you gain practice at using Emacs, you will find that typing these Control
+characters is faster than typing the arrow keys (because you do not
+have to move your hands away from touch-typing position).  Third, once
+you form the habit of using these Control character commands, you can
+easily learn to use other advanced cursor motion commands as well.
+</p>
+
+<p>
+Most Emacs commands accept a numeric argument; for most commands, this
+serves as a repeat-count.  The way you give a command a repeat count
+is by typing C-u and then the digits before you type the command.  If
+you have a META (or EDIT or ALT) key, there is another, alternative way
+to enter a numeric argument: type the digits while holding down the
+META key.  We recommend learning the C-u method because it works on
+any terminal.  The numeric argument is also called a "prefix argument",
+because you type the argument before the command it applies to.
+</p>
+
+<p>
+For instance, C-u 8 C-f moves forward eight characters.
+</p>
+
+<p>
+&gt;&gt; Try using C-n or C-p with a numeric argument, to move the cursor
+   to a line near this one with just one command.
+</p>
+
+<p>
+Most commands use the numeric argument as a repeat count, but some
+commands use it in some other way.  Several commands (but none of
+those you have learned so far) use it as a flag&#x2013;the presence of a
+prefix argument, regardless of its value, makes the command do
+something different.
+</p>
+
+<p>
+C-v and M-v are another kind of exception.  When given an argument,
+they scroll the text up or down by that many lines, rather than by a
+screenful.  For example, C-u 8 C-v scrolls by 8 lines.
+</p>
+
+<p>
+&gt;&gt; Try typing C-u 8 C-v now.
+</p>
+
+<p>
+This should have scrolled the text up by 8 lines.  If you would like
+to scroll it down again, you can give an argument to M-v.
+</p>
+
+<p>
+If you are using a graphical display, such as X or MS-Windows, there
+should be a tall rectangular area called a scroll bar on one side of
+the Emacs window.  You can scroll the text by clicking the mouse in
+the scroll bar.
+</p>
+
+<p>
+If your mouse has a wheel button, you can also use this to scroll.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> IF EMACS STOPS RESPONDING</h2>
+<div class="outline-text-2" id="text-3">
+<hr  />
+
+<p>
+If Emacs stops responding to your commands, you can stop it safely by
+typing C-g.  You can use C-g to stop a command which is taking too
+long to execute.
+</p>
+
+<p>
+You can also use C-g to discard a numeric argument or the beginning of
+a command that you do not want to finish.
+</p>
+
+<p>
+&gt;&gt; Type C-u 100 to make a numeric argument of 100, then type C-g.
+   Now type C-f.  It should move just one character, because you
+   canceled the argument with C-g.
+</p>
+
+<p>
+If you have typed an &lt;ESC&gt; by mistake, you can get rid of it with a C-g.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> DISABLED COMMANDS</h2>
+<div class="outline-text-2" id="text-4">
+<hr  />
+
+<p>
+Some Emacs commands are "disabled" so that beginning users cannot use
+them by accident.
+</p>
+
+<p>
+If you type one of the disabled commands, Emacs displays a message
+saying what the command was, and asking you whether you want to go
+ahead and execute the command.
+</p>
+
+<p>
+If you really want to try the command, type &lt;SPC&gt; (the Space bar) in
+answer to the question.  Normally, if you do not want to execute the
+disabled command, answer the question with "n".
+</p>
+
+<p>
+&gt;&gt; Type C-x C-l (which is a disabled command),
+   then type n to answer the question.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> WINDOWS</h2>
+<div class="outline-text-2" id="text-5">
+<hr  />
+
+<p>
+Emacs can have several "windows", each displaying its own text.  We
+will explain later on how to use multiple windows.  Right now we want
+to explain how to get rid of extra windows and go back to basic
+one-window editing.  It is simple:
+</p>
+
+<p>
+C-x 1        One window (i.e., kill all other windows).
+</p>
+
+<p>
+That is CONTROL-x followed by the digit 1.  C-x 1 expands the window
+which contains the cursor, to occupy the full screen.  It deletes all
+other windows.
+</p>
+
+<p>
+&gt;&gt; Move the cursor to this line and type C-u 0 C-l.
+&gt;&gt; Type C-h k C-f.
+   See how this window shrinks, while a new one appears
+   to display documentation on the C-f command.
+</p>
+
+<p>
+&gt;&gt; Type C-x 1 and see the documentation listing window disappear.
+</p>
+
+<p>
+There is a whole series of commands that start with CONTROL-x; many of
+them have to do with windows, files, buffers, and related things.
+These commands are two, three or four characters long.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> INSERTING AND DELETING</h2>
+<div class="outline-text-2" id="text-6">
+<hr  />
+
+<p>
+If you want to insert text, just type the text.  Ordinary characters,
+like A, 7, *, etc., are inserted as you type them.  To insert a
+Newline character, type &lt;Return&gt; (this is the key on the keyboard
+which is sometimes labeled "Enter").
+</p>
+
+<p>
+To delete the character immediately before the current cursor
+position, type &lt;DEL&gt;.  This is the key on the keyboard usually labeled
+"Backspace"&#x2013;the same one you normally use, outside Emacs, to delete
+the last character typed.
+</p>
+
+<p>
+There may also be another key on your keyboard labeled &lt;Delete&gt;, but
+that's not the one we refer to as &lt;DEL&gt;.
+</p>
+
+<p>
+&gt;&gt; Do this now&#x2013;type a few characters, then delete them by
+   typing &lt;DEL&gt; a few times.  Don't worry about this file
+   being changed; you will not alter the master tutorial.
+   This is your personal copy of it.
+</p>
+
+<p>
+When a line of text gets too big for one line on the screen, the line
+of text is "continued" onto a second screen line.  If you're using a
+graphical display, little curved arrows appear in the narrow spaces on
+each side of the text area (the left and right "fringes"), to indicate
+where a line has been continued.  If you're using a text terminal, the
+continued line is indicated by a backslash ('\') on the rightmost
+screen column.
+</p>
+
+<p>
+&gt;&gt; Insert text until you reach the right margin, and keep on inserting.
+   You'll see a continuation line appear.
+</p>
+
+<p>
+&gt;&gt; Use &lt;DEL&gt;s to delete the text until the line fits on one screen
+   line again.  The continuation line goes away.
+</p>
+
+<p>
+You can delete a Newline character just like any other character.
+Deleting the Newline character between two lines merges them into
+one line.  If the resulting combined line is too long to fit in the
+screen width, it will be displayed with a continuation line.
+</p>
+
+<p>
+&gt;&gt; Move the cursor to the beginning of a line and type &lt;DEL&gt;.  This
+   merges that line with the previous line.
+</p>
+
+<p>
+&gt;&gt; Type &lt;Return&gt; to reinsert the Newline you deleted.
+</p>
+
+<p>
+The &lt;Return&gt; key is special, in that pressing it may do more than
+just insert a Newline character.  Depending on the surrounding text,
+it may insert whitespace after the Newline character, so that when
+you start typing on the newly created line, the text lines up with
+that on the previous line.  We call this behavior (where pressing a
+key does more than simply inserting the relevant character) "electric".
+</p>
+
+<p>
+&gt;&gt; Here is an example of &lt;Return&gt; being electric.
+   Type &lt;Return&gt; at the end of this line.
+</p>
+
+<p>
+You should see that after inserting the Newline, Emacs inserts spaces
+so that the cursor moves under the "T" of "Type".
+</p>
+
+<p>
+Remember that most Emacs commands can be given a repeat count;
+this includes text characters.  Repeating a text character inserts
+it several times.
+</p>
+
+<p>
+&gt;&gt; Try that now &#x2013; type C-u 8 * to insert <b><b><b>**</b></b></b>.
+</p>
+
+<p>
+You've now learned the most basic way of typing something in
+Emacs and correcting errors.  You can delete by words or lines
+as well.  Here is a summary of the delete operations:
+</p>
+
+<p>
+&lt;DEL&gt;        Delete the character just before the cursor
+C-d                Delete the next character after the cursor
+</p>
+
+<p>
+M-&lt;DEL&gt;      Kill the word immediately before the cursor
+M-d             Kill the next word after the cursor
+</p>
+
+<p>
+C-k             Kill from the cursor position to end of line
+M-k             Kill to the end of the current sentence
+</p>
+
+<p>
+Notice that &lt;DEL&gt; and C-d vs M-&lt;DEL&gt; and M-d extend the parallel
+started by C-f and M-f (well, &lt;DEL&gt; is not really a control character,
+but let's not worry about that).  C-k and M-k are like C-e and M-e,
+sort of, in that lines are paired with sentences.
+</p>
+
+<p>
+You can also kill a segment of text with one uniform method.  Move to
+one end of that part, and type C-&lt;SPC&gt;.  (&lt;SPC&gt; is the Space bar.)
+Next, move the cursor to the other end of the text you intend to kill.
+As you do this, Emacs highlights the text between the cursor and the
+position where you typed C-&lt;SPC&gt;.  Finally, type C-w.  This kills all
+the text between the two positions.
+</p>
+
+<p>
+&gt;&gt; Move the cursor to the Y at the start of the previous paragraph.
+&gt;&gt; Type C-&lt;SPC&gt;.  Emacs should display a message "Mark set"
+   at the bottom of the screen.
+&gt;&gt; Move the cursor to the n in "end", on the second line of the
+   paragraph.
+&gt;&gt; Type C-w.  This will kill the text starting from the Y,
+   and ending just before the n.
+</p>
+
+<p>
+The difference between "killing" and "deleting" is that "killed" text
+can be reinserted (at any position), whereas "deleted" things cannot
+be reinserted in this way (you can, however, undo a deletion&#x2013;see
+below).  Reinsertion of killed text is called "yanking".  (Think of it
+as yanking back, or pulling back, some text that was taken away.)
+Generally, the commands that can remove a lot of text kill the text
+(they are set up so that you can yank the text), while the commands
+that remove just one character, or only remove blank lines and spaces,
+do deletion (so you cannot yank that text).  &lt;DEL&gt; and C-d do deletion
+in the simplest case, with no argument.  When given an argument, they
+kill instead.
+</p>
+
+<p>
+&gt;&gt; Move the cursor to the beginning of a line which is not empty.
+   Then type C-k to kill the text on that line.
+&gt;&gt; Type C-k a second time.  You'll see that it kills the Newline
+   which follows that line.
+</p>
+
+<p>
+Note that a single C-k kills the contents of the line, and a second
+C-k kills the line itself, and makes all the other lines move up.  C-k
+treats a numeric argument specially: it kills that many lines AND
+their contents.  This is not mere repetition.  C-u 2 C-k kills two
+lines and their Newlines; typing C-k twice would not do that.
+</p>
+
+<p>
+You can yank the killed text either at the same place where it was
+killed, or at some other place in the text you are editing, or even in
+a different file.  You can yank the same text several times; that
+makes multiple copies of it.  Some other editors call killing and
+yanking "cutting" and "pasting" (see the Glossary in the Emacs
+manual).
+</p>
+
+<p>
+The command for yanking is C-y.  It reinserts the last killed text,
+at the current cursor position.
+</p>
+
+<p>
+&gt;&gt; Try it; type C-y to yank the text back.
+</p>
+
+<p>
+If you do several C-k's in a row, all of the killed text is saved
+together, so that one C-y will yank all of the lines at once.
+</p>
+
+<p>
+&gt;&gt; Do this now, type C-k several times.
+</p>
+
+<p>
+Now to retrieve that killed text:
+</p>
+
+<p>
+&gt;&gt; Type C-y.  Then move the cursor down a few lines and type C-y
+   again.  You now see how to copy some text.
+</p>
+
+<p>
+What do you do if you have some text you want to yank back, and then
+you kill something else?  C-y would yank the more recent kill.  But
+the previous text is not lost.  You can get back to it using the M-y
+command.  After you have done C-y to get the most recent kill, typing
+M-y replaces that yanked text with the previous kill.  Typing M-y
+again and again brings in earlier and earlier kills.  When you have
+reached the text you are looking for, you do not have to do anything to
+keep it.  Just go on with your editing, leaving the yanked text where
+it is.
+</p>
+
+<p>
+If you M-y enough times, you come back to the starting point (the most
+recent kill).
+</p>
+
+<p>
+&gt;&gt; Kill a line, move around, kill another line.
+   Then do C-y to get back the second killed line.
+   Then do M-y and it will be replaced by the first killed line.
+   Do more M-y's and see what you get.  Keep doing them until
+   the second kill line comes back, and then a few more.
+   If you like, you can try giving M-y positive and negative
+   arguments.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> UNDO</h2>
+<div class="outline-text-2" id="text-7">
+<hr  />
+
+<p>
+If you make a change to the text, and then decide that it was a
+mistake, you can undo the change with the undo command, C-/.
+</p>
+
+<p>
+Normally, C-/ undoes the changes made by one command; if you repeat
+C-/ several times in a row, each repetition undoes one more command.
+</p>
+
+<p>
+But there are two exceptions: commands that do not change the text
+don't count (this includes cursor motion commands and scrolling
+commands), and self-inserting characters are usually handled in groups
+of up to 20.  (This is to reduce the number of C-/'s you have to type
+to undo insertion of text.)
+</p>
+
+<p>
+&gt;&gt; Kill this line with C-k, then type C-/ and it should reappear.
+</p>
+
+<p>
+C-_ is an alternative undo command; it works exactly the same as C-/.
+On some text terminals, typing C-/ actually sends C-_ to Emacs.
+Alternatively, C-x u also works exactly like C-/, but is a little less
+convenient to type.
+</p>
+
+<p>
+A numeric argument to C-/, C-_, or C-x u acts as a repeat count.
+</p>
+
+<p>
+You can undo deletion of text just as you can undo killing of text.
+The distinction between killing something and deleting it affects
+whether you can yank it with C-y; it makes no difference for undo.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> FILES</h2>
+<div class="outline-text-2" id="text-8">
+<hr  />
+
+<p>
+In order to make the text you edit permanent, you must put it in a
+file.  Otherwise, it will go away when you exit Emacs.  In order to
+put your text in a file, you must "find" the file before you enter the
+text.  (This is also called "visiting" the file.)
+</p>
+
+<p>
+Finding a file means that you see the contents of the file within
+Emacs.  In many ways, it is as if you were editing the file itself.
+However, the changes you make using Emacs do not become permanent
+until you "save" the file.  This is so you can avoid leaving a
+half-changed file on the system when you do not want to.  Even when
+you save, Emacs leaves the original file under a changed name in case
+you later decide that your changes were a mistake.
+</p>
+
+<p>
+If you look near the bottom of the screen you will see a line that
+begins with dashes, and starts with " -:&#x2014;  TUTORIAL" or something
+like that.  This part of the screen normally shows the name of the
+file that you are visiting.  Right now, you are visiting your personal
+copy of the Emacs tutorial, which is called "TUTORIAL".  When you find
+a file with Emacs, that file's name will appear in that precise spot.
+</p>
+
+<p>
+One special thing about the command for finding a file is that you
+have to say what file name you want.  We say the command "reads an
+argument" (in this case, the argument is the name of the file).  After
+you type the command
+</p>
+
+<p>
+C-x C-f   Find a file
+</p>
+
+<p>
+Emacs asks you to type the file name.  The file name you type appears
+on the bottom line of the screen.  The bottom line is called the
+minibuffer when it is used for this sort of input.  You can use
+ordinary Emacs editing commands to edit the file name.
+</p>
+
+<p>
+While you are entering the file name (or any minibuffer input),
+you can cancel the command with C-g.
+</p>
+
+<p>
+&gt;&gt; Type C-x C-f, then type C-g.  This cancels the minibuffer,
+   and also cancels the C-x C-f command that was using the
+   minibuffer.  So you do not find any file.
+</p>
+
+<p>
+When you have finished entering the file name, type &lt;Return&gt; to
+terminate it.  The minibuffer disappears, and the C-x C-f command goes
+to work to find the file you chose.
+</p>
+
+<p>
+The file contents now appear on the screen, and you can edit the
+contents.  When you wish to make your changes permanent, type the
+command
+</p>
+
+<p>
+C-x C-s   Save the file
+</p>
+
+<p>
+This copies the text within Emacs into the file.  The first time you
+do this, Emacs renames the original file to a new name so that it is
+not lost.  The new name is made by adding "~" to the end of the
+original file's name.  When saving is finished, Emacs displays the
+name of the file written.
+</p>
+
+<p>
+&gt;&gt; Type C-x C-s TUTORIAL &lt;Return&gt;.
+   This should save this tutorial to a file named TUTORIAL, and show
+   "Wrote &#x2026;TUTORIAL" at the bottom of the screen.
+</p>
+
+<p>
+You can find an existing file, to view it or edit it.  You can also
+find a file which does not already exist.  This is the way to create a
+file with Emacs: find the file, which starts out empty, and then begin
+inserting the text for the file.  When you ask to "save" the file,
+Emacs actually creates the file with the text that you have inserted.
+From then on, you can consider yourself to be editing an already
+existing file.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> BUFFERS</h2>
+<div class="outline-text-2" id="text-9">
+<hr  />
+
+<p>
+If you find a second file with C-x C-f, the first file remains
+inside Emacs.  You can switch back to it by finding it again with
+C-x C-f.  This way you can get quite a number of files inside Emacs.
+</p>
+
+<p>
+Emacs stores each file's text inside an object called a "buffer".
+Finding a file makes a new buffer inside Emacs.  To see a list of the
+buffers that currently exist, type
+</p>
+
+<p>
+C-x C-b   List buffers
+</p>
+
+<p>
+&gt;&gt; Try C-x C-b now.
+</p>
+
+<p>
+See how each buffer has a name, and it may also have a file name for
+the file whose contents it holds.  ANY text you see in an Emacs window
+is always part of some buffer.
+</p>
+
+<p>
+&gt;&gt; Type C-x 1 to get rid of the buffer list.
+</p>
+
+<p>
+When you have several buffers, only one of them is "current" at any
+time.  That buffer is the one you edit.  If you want to edit another
+buffer, you need to "switch" to it.  If you want to switch to a buffer
+that corresponds to a file, you can do it by visiting the file again
+with C-x C-f.  But there is an easier way: use the C-x b command.
+In that command, you have to type the buffer's name.
+</p>
+
+<p>
+&gt;&gt; Create a file named "foo" by typing C-x C-f foo &lt;Return&gt;.
+   Then type C-x b TUTORIAL &lt;Return&gt; to come back to this tutorial.
+</p>
+
+<p>
+Most of the time, the buffer's name is the same as the file name
+(without the file directory part).  However, this is not always true.
+The buffer list you make with C-x C-b shows you both the buffer name
+and the file name of every buffer.
+</p>
+
+<p>
+Some buffers do not correspond to files.  The buffer named
+"<b>Buffer List</b>", which contains the buffer list that you made with
+C-x C-b, does not have any file.  This TUTORIAL buffer initially did
+not have a file, but now it does, because in the previous section you
+typed C-x C-s and saved it to a file.
+</p>
+
+<p>
+The buffer named "<b>Messages</b>" also does not correspond to any file.
+This buffer contains the messages that have appeared on the bottom
+line during your Emacs session.
+</p>
+
+<p>
+&gt;&gt; Type C-x b <b>Messages</b> &lt;Return&gt; to look at the buffer of messages.
+   Then type C-x b TUTORIAL &lt;Return&gt; to come back to this tutorial.
+</p>
+
+<p>
+If you make changes to the text of one file, then find another file,
+this does not save the first file.  Its changes remain inside Emacs,
+in that file's buffer.  The creation or editing of the second file's
+buffer has no effect on the first file's buffer.  This is very useful,
+but it also means that you need a convenient way to save the first
+file's buffer.  Having to switch back to that buffer, in order to save
+it with C-x C-s, would be a nuisance.  So we have
+</p>
+
+<p>
+C-x s     Save some buffers
+</p>
+
+<p>
+C-x s asks you about each buffer which contains changes that you have
+not saved.  It asks you, for each such buffer, whether to save the
+buffer.
+</p>
+
+<p>
+&gt;&gt; Insert a line of text, then type C-x s.
+   It should ask you whether to save the buffer named TUTORIAL.
+   Answer yes to the question by typing "y".
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> EXTENDING THE COMMAND SET</h2>
+<div class="outline-text-2" id="text-10">
+<hr  />
+
+<p>
+There are many, many more Emacs commands than could possibly be put
+on all the control and meta characters.  Emacs gets around this with
+the X (eXtend) command.  This comes in two flavors:
+</p>
+
+<p>
+C-x        Character eXtend.  Followed by one character.
+M-x        Named command eXtend.  Followed by a long name.
+</p>
+
+<p>
+These are commands that are generally useful but are used less than the
+commands you have already learned about.  You have already seen a few
+of them: the file commands C-x C-f to Find and C-x C-s to Save, for
+example.  Another example is the command to end the Emacs
+session&#x2013;this is the command C-x C-c.  (Do not worry about losing
+changes you have made; C-x C-c offers to save each changed file before
+it kills Emacs.)
+</p>
+
+<p>
+If you are using a graphical display, you don't need any special
+command to move from Emacs to another application.  You can do this
+with the mouse or with window manager commands.  However, if you're
+using a text terminal which can only show one application at a time,
+you need to "suspend" Emacs to move to any other application.
+</p>
+
+<p>
+C-z is the command to exit Emacs <b>temporarily</b>&#x2013;so that you can go
+back to the same Emacs session afterward.  When Emacs is running on a
+text terminal, C-z "suspends" Emacs; that is, it returns to the shell
+but does not destroy the Emacs job.  In the most common shells, you
+can resume Emacs with the "fg" command or with "%emacs".
+</p>
+
+<p>
+The time to use C-x C-c is when you are about to log out.  It's also
+the right thing to use to exit an Emacs invoked for a quick edit, such
+as by a mail handling utility.
+</p>
+
+<p>
+There are many C-x commands.  Here is a list of the ones you have learned:
+</p>
+
+<p>
+C-x C-f                Find file
+C-x C-s                Save file
+C-x s                Save some buffers
+C-x C-b                List buffers
+C-x b                Switch buffer
+C-x C-c                Quit Emacs
+C-x 1                Delete all but one window
+C-x u                Undo
+</p>
+
+<p>
+Named eXtended commands are commands which are used even less
+frequently, or commands which are used only in certain modes.  An
+example is the command replace-string, which replaces one string with
+another in the buffer.  When you type M-x, Emacs prompts you at the
+bottom of the screen with M-x and you should type the name of the
+command; in this case, "replace-string".  Just type "repl s&lt;TAB&gt;" and
+Emacs will complete the name.  (&lt;TAB&gt; is the Tab key, usually found
+above the CapsLock or Shift key near the left edge of the keyboard.)
+Submit the command name with &lt;Return&gt;.
+</p>
+
+<p>
+The replace-string command requires two arguments&#x2013;the string to be
+replaced, and the string to replace it with.  You must end each
+argument with &lt;Return&gt;.
+</p>
+
+<p>
+&gt;&gt; Move the cursor to the blank line two lines below this one.
+   Then type M-x repl s&lt;Return&gt;changed&lt;Return&gt;altered&lt;Return&gt;.
+</p>
+
+<p>
+Notice how this line has changed: you've replaced the word
+"changed" with "altered" wherever it occurred, after the
+initial position of the cursor.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> AUTO SAVE</h2>
+<div class="outline-text-2" id="text-11">
+<hr  />
+
+<p>
+When you have made changes in a file, but you have not saved them yet,
+they could be lost if your computer crashes.  To protect you from
+this, Emacs periodically writes an "auto save" file for each file that
+you are editing.  The auto save file name has a # at the beginning and
+the end; for example, if your file is named "hello.c", its auto save
+file's name is "#hello.c#".  When you save the file in the normal way,
+Emacs deletes its auto save file.
+</p>
+
+<p>
+If the computer crashes, you can recover your auto-saved editing by
+finding the file normally (the file you were editing, not the auto
+save file) and then typing M-x recover-file &lt;Return&gt;.  When it asks for
+confirmation, type yes&lt;Return&gt; to go ahead and recover the auto-save
+data.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> ECHO AREA</h2>
+<div class="outline-text-2" id="text-12">
+<hr  />
+
+<p>
+If Emacs sees that you are typing multicharacter commands slowly, it
+shows them to you at the bottom of the screen in an area called the
+"echo area".  The echo area contains the bottom line of the screen.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> MODE LINE</h2>
+<div class="outline-text-2" id="text-13">
+<hr  />
+
+<p>
+The line immediately above the echo area is called the "mode line".
+The mode line says something like this:
+</p>
+
+<p>
+-:**-  TUTORIAL       63% L749    (Fundamental)
+</p>
+
+<p>
+This line gives useful information about the status of Emacs and
+the text you are editing.
+</p>
+
+<p>
+You already know what the filename means&#x2013;it is the file you have
+found.  NN% indicates your current position in the buffer text; it
+means that NN percent of the buffer is above the top of the screen.
+If the top of the buffer is on the screen, it will say "Top" instead
+of " 0%".  If the bottom of the buffer is on the screen, it will say
+"Bot".  If you are looking at a buffer so small that all of it fits on
+the screen, the mode line says "All".
+</p>
+
+<p>
+The L and digits indicate position in another way: they give the
+current line number of point.
+</p>
+
+<p>
+The stars near the front mean that you have made changes to the text.
+Right after you visit or save a file, that part of the mode line shows
+no stars, just dashes.
+</p>
+
+<p>
+The part of the mode line inside the parentheses is to tell you what
+editing modes you are in.  The default mode is Fundamental which is
+what you are using now.  It is an example of a "major mode".
+</p>
+
+<p>
+Emacs has many different major modes.  Some of them are meant for
+editing different languages and/or kinds of text, such as Lisp mode,
+Text mode, etc.  At any time one and only one major mode is active,
+and its name can always be found in the mode line just where
+"Fundamental" is now.
+</p>
+
+<p>
+Each major mode makes a few commands behave differently.  For example,
+there are commands for creating comments in a program, and since each
+programming language has a different idea of what a comment should
+look like, each major mode has to insert comments differently.  Each
+major mode is the name of an extended command, which is how you can
+switch to that mode.  For example, M-x fundamental-mode is a command to
+switch to Fundamental mode.
+</p>
+
+<p>
+If you are going to be editing human-language text, such as this file, you
+should probably use Text Mode.
+</p>
+
+<p>
+&gt;&gt; Type M-x text-mode &lt;Return&gt;.
+</p>
+
+<p>
+Don't worry, none of the Emacs commands you have learned changes in
+any great way.  But you can observe that M-f and M-b now treat
+apostrophes as part of words.  Previously, in Fundamental mode,
+M-f and M-b treated apostrophes as word-separators.
+</p>
+
+<p>
+Major modes usually make subtle changes like that one: most commands
+do "the same job" in each major mode, but they work a little bit
+differently.
+</p>
+
+<p>
+To view documentation on your current major mode, type C-h m.
+</p>
+
+<p>
+&gt;&gt; Move the cursor to the line following this line.
+&gt;&gt; Type C-l C-l to bring this line to the top of screen.
+&gt;&gt; Type C-h m, to see how Text mode differs from Fundamental mode.
+&gt;&gt; Type C-x 1 to remove the documentation from the screen.
+</p>
+
+<p>
+Major modes are called major because there are also minor modes.
+Minor modes are not alternatives to the major modes, just minor
+modifications of them.  Each minor mode can be turned on or off by
+itself, independent of all other minor modes, and independent of your
+major mode.  So you can use no minor modes, or one minor mode, or any
+combination of several minor modes.
+</p>
+
+<p>
+One minor mode which is very useful, especially for editing
+human-language text, is Auto Fill mode.  When this mode is on, Emacs
+breaks the line in between words automatically whenever you insert
+text and make a line that is too wide.
+</p>
+
+<p>
+You can turn Auto Fill mode on by doing M-x auto-fill-mode &lt;Return&gt;.
+When the mode is on, you can turn it off again by doing
+M-x auto-fill-mode &lt;Return&gt;.  If the mode is off, this command turns
+it on, and if the mode is on, this command turns it off.  We say that
+the command "toggles the mode".
+</p>
+
+<p>
+&gt;&gt; Type M-x auto-fill-mode &lt;Return&gt; now.  Then insert a line of "asdf "
+   over again until you see it divide into two lines.  You must put in
+   spaces between them because Auto Fill breaks lines only at spaces.
+</p>
+
+<p>
+The margin is usually set at 70 characters, but you can change it
+with the C-x f command.  You should give the margin setting you want
+as a numeric argument.
+</p>
+
+<p>
+&gt;&gt; Type C-x f with an argument of 20.  (C-u 2 0 C-x f).
+   Then type in some text and see Emacs fill lines of 20
+   characters with it.  Then set the margin back to 70 using
+   C-x f again.
+</p>
+
+<p>
+If you make changes in the middle of a paragraph, Auto Fill mode
+does not re-fill it for you.
+To re-fill the paragraph, type M-q (META-q) with the cursor inside
+that paragraph.
+</p>
+
+<p>
+&gt;&gt; Move the cursor into the previous paragraph and type M-q.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> SEARCHING</h2>
+<div class="outline-text-2" id="text-14">
+<hr  />
+
+<p>
+Emacs can do searches for strings (a "string" is a group of contiguous
+characters) either forward through the text or backward through it.
+Searching for a string is a cursor motion command; it moves the cursor
+to the next place where that string appears.
+</p>
+
+<p>
+The Emacs search command is "incremental".  This means that the
+search happens while you type in the string to search for.
+</p>
+
+<p>
+The command to initiate a search is C-s for forward search, and C-r
+for reverse search.  BUT WAIT!  Don't try them now.
+</p>
+
+<p>
+When you type C-s you'll notice that the string "I-search" appears as
+a prompt in the echo area.  This tells you that Emacs is in what is
+called an incremental search waiting for you to type the thing that
+you want to search for.  &lt;Return&gt; terminates a search.
+</p>
+
+<p>
+&gt;&gt; Now type C-s to start a search.  SLOWLY, one letter at a time,
+   type the word "cursor", pausing after you type each
+   character to notice what happens to the cursor.
+   Now you have searched for "cursor", once.
+&gt;&gt; Type C-s again, to search for the next occurrence of "cursor".
+&gt;&gt; Now type &lt;DEL&gt; four times and see how the cursor moves.
+&gt;&gt; Type &lt;Return&gt; to terminate the search.
+</p>
+
+<p>
+Did you see what happened?  Emacs, in an incremental search, tries to
+go to the occurrence of the string that you've typed out so far.  To
+go to the next occurrence of "cursor" just type C-s again.  If no such
+occurrence exists, Emacs beeps and tells you the search is currently
+"failing".  C-g would also terminate the search.
+</p>
+
+<p>
+If you are in the middle of an incremental search and type &lt;DEL&gt;, the
+search "retreats" to an earlier location.  If you type &lt;DEL&gt; just
+after you had typed C-s to advance to the next occurrence of a search
+string, the &lt;DEL&gt; moves the cursor back to an earlier occurrence.  If
+there are no earlier occurrences, the &lt;DEL&gt; erases the last character
+in the search string.  For instance, suppose you have typed "c", to
+search for the first occurrence of "c".  Now if you type "u", the
+cursor will move to the first occurrence of "cu".  Now type &lt;DEL&gt;.
+This erases the "u" from the search string, and the cursor moves back
+to the first occurrence of "c".
+</p>
+
+<p>
+If you are in the middle of a search and type a control or meta
+character (with a few exceptions&#x2013;characters that are special in a
+search, such as C-s and C-r), the search is terminated.
+</p>
+
+<p>
+C-s starts a search that looks for any occurrence of the search string
+AFTER the current cursor position.  If you want to search for
+something earlier in the text, type C-r instead.  Everything that we
+have said about C-s also applies to C-r, except that the direction of
+the search is reversed.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> MULTIPLE WINDOWS</h2>
+<div class="outline-text-2" id="text-15">
+<hr  />
+
+<p>
+One of the nice features of Emacs is that you can display more than
+one window on the screen at the same time.  (Note that Emacs uses the
+term "frames"&#x2013;described in the next section&#x2013;for what some other
+applications call "windows".  The Emacs manual contains a Glossary of
+Emacs terms.)
+</p>
+
+<p>
+&gt;&gt; Move the cursor to this line and type C-l C-l.
+</p>
+
+<p>
+&gt;&gt; Now type C-x 2 which splits the screen into two windows.
+   Both windows display this tutorial.  The editing cursor stays in
+   the top window.
+</p>
+
+<p>
+&gt;&gt; Type C-M-v to scroll the bottom window.
+   (If you do not have a real META key, type &lt;ESC&gt; C-v.)
+</p>
+
+<p>
+&gt;&gt; Type C-x o ("o" for "other") to move the cursor to the bottom window.
+&gt;&gt; Use C-v and M-v in the bottom window to scroll it.
+   Keep reading these directions in the top window.
+</p>
+
+<p>
+&gt;&gt; Type C-x o again to move the cursor back to the top window.
+   The cursor in the top window is just where it was before.
+</p>
+
+<p>
+You can keep using C-x o to switch between the windows.  The "selected
+window", where most editing takes place, is the one with a prominent
+cursor which blinks when you are not typing.  The other windows have
+their own cursor positions; if you are running Emacs in a graphical
+display, those cursors are drawn as unblinking hollow boxes.
+</p>
+
+<p>
+The command C-M-v is very useful when you are editing text in one
+window and using the other window just for reference.  Without leaving
+the selected window, you can scroll the text in the other window with
+C-M-v.
+</p>
+
+<p>
+C-M-v is an example of a CONTROL-META character.  If you have a META
+(or Alt) key, you can type C-M-v by holding down both CONTROL and META
+while typing v.  It does not matter whether CONTROL or META "comes
+first," as both of these keys act by modifying the characters you
+type.
+</p>
+
+<p>
+If you do not have a META key, and you use &lt;ESC&gt; instead, the order
+does matter: you must type &lt;ESC&gt; followed by CONTROL-v, because
+CONTROL-&lt;ESC&gt; v will not work.  This is because &lt;ESC&gt; is a character
+in its own right, not a modifier key.
+</p>
+
+<p>
+&gt;&gt; Type C-x 1 (in the top window) to get rid of the bottom window.
+</p>
+
+<p>
+(If you had typed C-x 1 in the bottom window, that would get rid
+of the top one.  Think of this command as "Keep just one
+window&#x2013;the window I am already in.")
+</p>
+
+<p>
+You do not have to display the same buffer in both windows.  If you
+use C-x C-f to find a file in one window, the other window does not
+change.  You can find a file in each window independently.
+</p>
+
+<p>
+Here is another way to use two windows to display two different things:
+</p>
+
+<p>
+&gt;&gt; Type C-x 4 C-f followed by the name of one of your files.
+   End with &lt;Return&gt;.  See the specified file appear in the bottom
+   window.  The cursor goes there, too.
+</p>
+
+<p>
+&gt;&gt; Type C-x o to go back to the top window, and C-x 1 to delete
+   the bottom window.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> MULTIPLE FRAMES</h2>
+<div class="outline-text-2" id="text-16">
+<hr  />
+
+<p>
+Emacs can also create multiple "frames".  A frame is what we call one
+collection of windows, together with its menus, scroll bars, echo
+area, etc.  On graphical displays, what Emacs calls a "frame" is what
+most other applications call a "window".  Multiple graphical frames
+can be shown on the screen at the same time.  On a text terminal, only
+one frame can be shown at a time.
+</p>
+
+<p>
+&gt;&gt; Type M-x make-frame &lt;Return&gt;.
+   See a new frame appear on your screen.
+</p>
+
+<p>
+You can do everything you did in the original frame in the new frame.
+There is nothing special about the first frame.
+</p>
+
+<p>
+&gt;&gt; Type M-x delete-frame &lt;Return&gt;.
+   This removes the selected frame.
+</p>
+
+<p>
+You can also remove a frame by using the normal method provided by the
+graphical system (often clicking a button with an "X" at a top corner
+of the frame).  If you remove the Emacs job's last frame this way,
+that exits Emacs.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> RECURSIVE EDITING LEVELS</h2>
+<div class="outline-text-2" id="text-17">
+<hr  />
+
+<p>
+Sometimes you will get into what is called a "recursive editing
+level".  This is indicated by square brackets in the mode line,
+surrounding the parentheses around the major mode name.  For
+example, you might see [(Fundamental)] instead of (Fundamental).
+</p>
+
+<p>
+To get out of the recursive editing level, type &lt;ESC&gt; &lt;ESC&gt; &lt;ESC&gt;.
+That is an all-purpose "get out" command.  You can also use it for
+eliminating extra windows, and getting out of the minibuffer.
+</p>
+
+<p>
+&gt;&gt; Type M-x to get into a minibuffer; then type &lt;ESC&gt; &lt;ESC&gt; &lt;ESC&gt; to
+   get out.
+</p>
+
+<p>
+You cannot use C-g to get out of a recursive editing level.  This is
+because C-g is used for canceling commands and arguments WITHIN the
+recursive editing level.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> GETTING MORE HELP</h2>
+<div class="outline-text-2" id="text-18">
+<hr  />
+
+<p>
+In this tutorial we have tried to supply just enough information to
+get you started using Emacs.  There is so much available in Emacs that
+it would be impossible to explain it all here.  However, you may want
+to learn more about Emacs since it has many other useful features.
+Emacs provides commands for reading documentation about Emacs
+commands.  These "help" commands all start with the character
+CONTROL-h, which is called "the Help character".
+</p>
+
+<p>
+To use the Help features, type the C-h character, and then a
+character saying what kind of help you want.  If you are REALLY lost,
+type C-h ? and Emacs will tell you what kinds of help it can give.
+If you have typed C-h and decide you do not want any help, just
+type C-g to cancel it.
+</p>
+
+<p>
+(If C-h does not display a message about help at the bottom of the
+screen, try typing the F1 key or M-x help &lt;Return&gt; instead.)
+</p>
+
+<p>
+The most basic HELP feature is C-h c.  Type C-h, the character c, and
+a command character or sequence; then Emacs displays a very brief
+description of the command.
+</p>
+
+<p>
+&gt;&gt; Type C-h c C-p.
+</p>
+
+<p>
+The message should be something like this:
+</p>
+
+<p>
+C-p runs the command previous-line
+</p>
+
+<p>
+This tells you the "name of the function".  Since function names
+are chosen to indicate what the command does, they can serve as
+very brief documentation&#x2013;sufficient to remind you of commands you
+have already learned.
+</p>
+
+<p>
+Multi-character commands such as C-x C-s and (if you have no META or
+EDIT or ALT key) &lt;ESC&gt;v are also allowed after C-h c.
+</p>
+
+<p>
+To get more information about a command, use C-h k instead of C-h c.
+</p>
+
+<p>
+&gt;&gt; Type C-h k C-p.
+</p>
+
+<p>
+This displays the documentation of the function, as well as its name,
+in an Emacs window.  When you are finished reading the output, type
+C-x 1 to get rid of that window.  You do not have to do this right
+away.  You can do some editing while referring to the help text, and
+then type C-x 1.
+</p>
+
+<p>
+Here are some other useful C-h options:
+</p>
+
+<p>
+C-h f        Describe a function.  You type in the name of the
+             function.
+</p>
+
+<p>
+&gt;&gt; Try typing C-h f previous-line &lt;Return&gt;.
+   This displays all the information Emacs has about the
+   function which implements the C-p command.
+</p>
+
+<p>
+A similar command C-h v displays the documentation of variables,
+including those whose values you can set to customize Emacs behavior.
+You need to type in the name of the variable when Emacs prompts for it.
+</p>
+
+<p>
+C-h a        Command Apropos.  Type in a keyword and Emacs will list
+             all the commands whose names contain that keyword.
+             These commands can all be invoked with META-x.
+             For some commands, Command Apropos will also list a one
+             or two character sequence which runs the same command.
+</p>
+
+<p>
+&gt;&gt; Type C-h a file &lt;Return&gt;.
+</p>
+
+<p>
+This displays in another window a list of all M-x commands with "file"
+in their names.  You will see character-commands listed beside the
+corresponding command names (such as C-x C-f beside find-file).
+</p>
+
+<p>
+&gt;&gt; Type C-M-v to scroll the help window.  Do this a few times.
+</p>
+
+<p>
+&gt;&gt; Type C-x 1 to delete the help window.
+</p>
+
+<p>
+C-h i        Read included Manuals (a.k.a. Info).  This command puts
+             you into a special buffer called "<b>info</b>" where you
+             can read manuals for the packages installed on your system.
+             Type m emacs &lt;Return&gt; to read the Emacs manual.
+             If you have never before used Info, type ? and Emacs
+             will take you on a guided tour of Info mode facilities.
+             Once you are through with this tutorial, you should
+             consult the Emacs Info manual as your primary documentation.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> MORE FEATURES</h2>
+<div class="outline-text-2" id="text-19">
+<hr  />
+
+<p>
+You can learn more about Emacs by reading its manual, either as a
+printed book, or inside Emacs (use the Help menu or type C-h r).
+Two features that you may like especially are completion, which saves
+typing, and dired, which simplifies file handling.
+</p>
+
+<p>
+Completion is a way to avoid unnecessary typing.  For instance, if you
+want to switch to the <b>Messages</b> buffer, you can type C-x b *M&lt;Tab&gt;
+and Emacs will fill in the rest of the buffer name as far as it can
+determine from what you have already typed.  Completion also works for
+command names and file names.  Completion is described in the Emacs
+manual in the node called "Completion".
+</p>
+
+<p>
+Dired enables you to list files in a directory (and optionally its
+subdirectories), move around that list, visit, rename, delete and
+otherwise operate on the files.  Dired is described in the Emacs
+manual in the node called "Dired".
+</p>
+
+<p>
+The manual also describes many other Emacs features.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> CONCLUSION</h2>
+<div class="outline-text-2" id="text-20">
+<hr  />
+
+<p>
+To exit Emacs use C-x C-c.
+</p>
+
+<p>
+This tutorial is meant to be understandable to all new users, so if
+you found something unclear, don't sit and blame yourself - complain!
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> COPYING</h2>
+<div class="outline-text-2" id="text-21">
+<hr  />
+
+<p>
+This tutorial descends from a long line of Emacs tutorials
+starting with the one written by Stuart Cracraft for the original Emacs.
+</p>
+
+<p>
+This version of the tutorial is a part of GNU Emacs.  It is copyrighted
+and comes with permission to distribute copies on certain conditions:
+</p>
+
+<p>
+Copyright (C) 1985, 1996, 1998, 2001-2016 Free Software Foundation,
+Inc.
+</p>
+
+<p>
+This file is part of GNU Emacs.
+</p>
+
+<p>
+GNU Emacs is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+</p>
+
+<p>
+GNU Emacs is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+</p>
+
+<p>
+You should have received a copy of the GNU General Public License
+along with GNU Emacs.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
+</p>
+
+<p>
+Please read the file COPYING and then do give copies of GNU Emacs to
+your friends.  Help stamp out software obstructionism ("ownership") by
+using, writing, and sharing free software!
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: ttn</p>
+<p class="date">Created: 2018-11-18 Sun 16:11</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
