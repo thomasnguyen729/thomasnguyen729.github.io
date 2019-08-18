@@ -16,6 +16,28 @@ var correct = 0;
         correct++;
     }
 
+var messages = ["Great Job!", "That's just okay", "You really need to do better"];
+
+
+var range;
+
+    if (correct < 1) {
+        range = 2:
+    }
+
+    if (correct > 0 && correct < 3) {
+        range = 1;
+    }
+
+    if (correct > 2) {
+        range = 0;
+    }
+
+
 document.getElementById("after_submit").style.visibility = "visible";
+
+
+
+document.getElementById("message").innerHTML = messages [range];
 document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
 }
