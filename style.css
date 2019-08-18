@@ -1,3 +1,8 @@
 body {
   font-family: 'Lato', sans-serif;
 }
+
+#after_submit {
+    visibility: hidden;
+  
+}
