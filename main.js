@@ -22,7 +22,7 @@ var messages = ["Great Job!", "That's just okay", "You really need to do better"
 var range;
 
     if (correct < 1) {
-        range = 2:
+        range = 2;
     }
 
     if (correct > 0 && correct < 3) {
