@@ -6,13 +6,13 @@ var question3 = document.quiz.question3.value;
 var correct = 0;
 
 
-    if (question1 == "Providence") {
+    if (question1 == "Number of bonding locations around a particular atom in a molecule") {
         correct ++;
 }
-    if (question2 == "Hartford") {
+    if (question2 == "4 bonding domains") {
         correct ++;
 }
-    if (question3 == "Albany")   {
+    if (question3 == "Trigonal Pyrmaidal")   {
         correct++;
     }
 
